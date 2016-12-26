@@ -3,15 +3,26 @@ apply plugin: 'eclipse'
 apply plugin: 'application'
 
 sourceCompatibility = 1.8
-
+tasks.withType(JavaCompile){
+	options.encoding='UTF-8'
+}
 version = '1.0'
 
 jar {
+mainClassName = 'kr.or.dgit.bigdata.school.TestMain'
     manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
+    
+        attributes 'Implementation-Title': 'School',
                    'Implementation-Version': version
+       
     }
+    dependsOn configurations.runtime // 실행가능한 jar 파일설정 
 }
+javadoc {
+     options.encoding = 'utf-8'
+      //  destinationDir = '${buildDir}/dist/javadoc'
+       //  title = '${baseName} ${version}' 
+       }
 
 repositories {
     mavenCentral()
