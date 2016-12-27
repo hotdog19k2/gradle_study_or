@@ -7,15 +7,17 @@ public class Student {
 	private int studId;
 	private String name;
 	private String email;
+	private PhonNumber phon;
 	private Date dob;
 	
 	public Student() {}
 
-	public Student(int studId, String name, String email, Date dob) {
+	public Student(int studId, String name, String email, Date dob,PhonNumber phon) {
 		this.studId = studId;
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
+		this.phon = phon;
 	}
 
 	public int getStudId() {
@@ -50,9 +52,18 @@ public class Student {
 		this.dob = dob;
 	}
 
+	
+	public PhonNumber getPhon() {
+		return phon;
+	}
+
+	public void setPhon(PhonNumber phon) {
+		this.phon = phon;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Student [studId=%s, name=%s, email=%s, dob=%s]", studId, name, email, dob);
+		return String.format("Student [studId=%s, name=%s, email=%s, dob=%s,phon=%s]", studId, name, email, dob,phon);
 	}
 
 	@Override

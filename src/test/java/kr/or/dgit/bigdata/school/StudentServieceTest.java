@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import kr.or.dgit.bigdata.school.dto.PhonNumber;
 import kr.or.dgit.bigdata.school.dto.Student;
 import kr.or.dgit.bigdata.school.service.StudentService;
 
@@ -39,18 +40,18 @@ public class StudentServieceTest {
 		Assert.assertNotNull(std);
 	}
 	
-/*	@Test
+	@Test
 	public void testInsertItem(){
 		Calendar cal = Calendar.getInstance();
 		cal.set(2000, 01, 01);
 		
-		Student insStd = new Student(5, "강보미3", "kbm@test.co.kr", cal.getTime());
+		Student insStd = new Student(2, "곽1", "kbm@test.co.kr", cal.getTime(),new PhonNumber("010-1111-1211"));
 		studentService.insertItem(insStd);
 		
 		List<Student> list = studentService.findAllStudent();
 		
 		Assert.assertEquals(5, list.size());
-	}*/
+	}
 	
 	@Test
 	public void testDeleteItem(){
@@ -66,7 +67,7 @@ public class StudentServieceTest {
 		Calendar cal = Calendar.getInstance();
 		cal.clear();
 		cal.set(2000, 01, 01);
-		Student update = new Student(3, "이유진2", "lyj@test.co.kr", cal.getTime());
+		Student update = new Student(3, "이유진2", "lyj@test.co.kr", cal.getTime(),new PhonNumber("010-1111-1211"));
 		
 		studentService.updateItem(update);
 		
