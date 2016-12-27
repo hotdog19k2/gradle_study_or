@@ -10,11 +10,11 @@
 		<result property="dob" column="dob"/>
 	</resultMap>
 	
-	<select id="selectByAll" resultMap="StudentResult"> 
+	<select id="selectByAll" resultType="student"> 
 		select * from student  
 	</select>
 	
-	<select id="selectByNo" parameterType="int" resultMap="StudentResult">
+	<select id="selectByNo" parameterType="int" resultType="student">
 		select * from student where stud_id=#{studId}
 	</select>
 	
